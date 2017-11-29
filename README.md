@@ -1,6 +1,10 @@
 # RxRetrofit
 这是一个retrofit2的封装库，结合rextrofit2、rxjava2、rxandroid，实现获取String类型原始网络数据的一个简单封装库
 
+## 如何使用
+
+### 1.下面这个NewsApi是一个继承自BaseApi的演示子类api，大家可以参考这个例子写自己想要的Api。
+
 ```code
 
 import android.content.Context;
@@ -62,4 +66,46 @@ public class NewsApi extends BaseApi {
     }
 }
 
+```
+
+### 2.在activity或者fragment中调用
+```code
+  @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        findViewById(R.id.getData).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getData();
+            }
+        });
+
+
+    }
+
+    private void getData(){
+        NewsApi newsApi =new NewsApi(this, new HttpOnNextListener() {
+            @Override
+            public void onNext(String data, String method) {
+
+                ((TextView)findViewById(R.id.showNews)).setText(data);
+
+                // 自定义解析的方案
+                if(method.equals(NewsApi.GET_NEWS)){
+                    NewsBean newsBean = (NewsBean) JsonUtil.strToObject(data,NewsBean.class);
+                    if("0".equals(newsBean.getStatus())){
+
+                    }
+                }
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                e.printStackTrace();
+            }
+        });
+        newsApi.getNews("科技",0,10);
+    }
 ```
