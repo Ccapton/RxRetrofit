@@ -1,7 +1,7 @@
 # RxRetrofit
 这是一个retrofit2的封装库，结合rextrofit2、rxjava2、rxandroid，实现获取String类型原始网络数据的一个简单封装库
 
-、、、code
+```code
 
 import android.content.Context;
 
@@ -62,4 +62,4 @@ public class NewsApi extends BaseApi {
     }
 }
 
-、、、
+```
