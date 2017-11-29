@@ -1,6 +1,25 @@
 # RxRetrofit
 这是一个retrofit2的封装库，结合rextrofit2、rxjava2、rxandroid，实现获取String类型原始网络数据的一个简单封装库
 
+## 引入
+#### 1 通过gradle
+build.gradle(Project)
+```
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+build.gradle(Module:app)
+```
+dependencies {
+         compile 'com.github.Ccapton:EasyNaviBar:1.1.0'
+   }
+```
+#### 2 下载项目后，直接把library工程引入到你的项目中，方便修改和优化（强烈建议）
+
 ## 如何使用
 
 ### 1.下面这个NewsApi是一个继承自BaseApi的演示子类api，大家可以参考这个例子写自己想要的Api。
