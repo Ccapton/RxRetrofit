@@ -1,6 +1,7 @@
 # RxRetrofit
 这是一个retrofit2的封装库，结合rextrofit2、rxjava2、rxandroid，实现获取String类型原始网络数据的一个简单封装库
 
+![](https://raw.githubusercontent.com/Ccapton/RxRetrofit/master/ezgif.com-resize%20(1).gif)
 ## 引入
 #### 1 通过gradle
 build.gradle(Project)
@@ -15,7 +16,7 @@ allprojects {
 build.gradle(Module:app)
 ```
 dependencies {
-         compile 'com.github.Ccapton:EasyNaviBar:1.1.0'
+         compile 'com.github.Ccapton:RxRetrofit:1.0.0'
    }
 ```
 #### 2 下载项目后，直接把library工程引入到你的项目中，方便修改和优化（强烈建议）
